@@ -1,4 +1,4 @@
-package leetcode.l001;
+package leetcode.l0001;
 
 class Solution {
     public int[] twoSum(int[] nums, int target) {

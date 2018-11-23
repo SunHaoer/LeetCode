@@ -1,4 +1,4 @@
-package leetcode.l010;
+package leetcode.l0010;
 
 class Solution {
 	
