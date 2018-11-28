@@ -10,7 +10,9 @@ class Solution {
         	if(nums[i] == val) {		// 移除
         		nums[i] = nums[last--];
         		cnt++;
-        	}
+        	} else if(nums[i] > val) {
+                break;
+            }
         }
     	return nums.length - cnt;
     }
