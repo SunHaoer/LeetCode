@@ -16,11 +16,3 @@ class Solution {
     }
 }
 
-public class Main {
-	public static void main(String[] args) {
-		int nums[] = {2, 7, 11, 15};
-		int target = 9;
-		Solution solution = new Solution();
-		System.out.println(solution.twoSum(nums, target)[0] + " " + solution.twoSum(nums, target)[1]);
-	}
-}
