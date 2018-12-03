@@ -2,26 +2,26 @@ package leetcode.l0055;
 
 class Solution {
 	
-	public final int MAX = 1024;
+	public final int MAX = 1000000;
 	public boolean flag = false;
 	public boolean[] visited = new boolean[MAX];
 	
 	public void eachStep(int[] nums, int index) {
-		System.out.println(index);
-		if(flag) {
-			System.out.println(flag);
-			return;
-		} else {
+		if(!flag) {
 			visited[index] = true;
 			if(index == nums.length - 1) {
 				flag = true;
 			} else {
-				for(int i = 1; i <= nums[index] && index + i < nums.length; i++) {
-					if(!visited[index + 1]) {
-						eachStep(nums, index + i);
-					}		
-				}			
-			}
+                if(index + nums[index] >= nums.length - 1) {
+                    flag = true;
+                } else {
+                    for(int i = 1; i <= nums[index] && index + i < nums.length; i++) {
+                        if(!visited[index + i]) {
+                            eachStep(nums, index + i);
+                        }		
+                    }			                    
+                }
+			 }
 		}
 	}
 	
@@ -35,7 +35,7 @@ class Solution {
 public class Main {
 	public static void main(String[] args) {
 		Solution solution = new Solution();
-		int nums[] = new int[] {1,1,1,1,1,1,1};
+		int nums[] = new int[] {3,0,8,2,0,0,1};
 		System.out.println(solution.canJump(nums));
 	}
 }
